@@ -4,6 +4,7 @@ const express = require('express')
 // IMPORTS
 const logger = require('./middlewares/logger')
 const workoutRoutes = require('./routes/Workouts')
+const connectDB = require('./db/connect')
 
 const app = express()
 
@@ -15,4 +16,14 @@ app.use(logger)
 app.use('/api/v1/workouts', workoutRoutes)
 
 // listening
-app.listen(process.env.PORT, () => console.log(`Server is listening on http://localhost:${ process.env.PORT }`))
+const start = async () => {
+  try {
+    await connectDB(process.env.DB_URI)
+    console.log('Connected to Database Sucessfully!')
+    app.listen(process.env.PORT, () => console.log(`Server is listening on http://localhost:${ process.env.PORT }`))
+  } catch(err) {
+    console.log(err)
+  }
+}
+
+start()

@@ -1,3 +1,5 @@
+const Workout = require('../models/Workouts')
+
 const getAllWorkouts = (req, res) => {
   res.status(200).json({ 
     msg: 'GET all workouts' 
@@ -13,13 +15,15 @@ const getSingleWorkout = (req, res) => {
   })
 }
 
-const createWorkout = (req, res) => {
-  const { body } = req
-
-  res.status(201).json({ 
-    content: body,
-    msg: 'POST a new workout' 
-  })
+const createWorkout = async (req, res) => {
+  const { title, reps, load } = req.body
+  
+  try {
+    const workout = await Workout.create({ title, reps, load })
+    res.status(201).json(workout)
+  } catch (error) {
+    res.status(400).json({ error: error.message })
+  }
 }
 
 const deleteWorkout = (req, res) => {

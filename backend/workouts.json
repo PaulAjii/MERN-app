@@ -1,0 +1,31 @@
+[
+  {
+    "title": "First Workout",
+    "reps": 30,
+    "load": 2
+  },
+
+  {
+    "title": "Second Workout",
+    "reps": 50,
+    "load": 4
+  },
+
+  {
+    "title": "Third Workout",
+    "reps": 35,
+    "load": 8
+  },
+
+  {
+    "title": "Fourth Workout",
+    "reps": 20,
+    "load": 1
+  },
+
+  {
+    "title": "Fifth Workout",
+    "reps": 21,
+    "load": 7
+  }
+]
