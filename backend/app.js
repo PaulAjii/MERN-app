@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const cors = require('cors')
 
 // IMPORTS
 const logger = require('./middlewares/logger')
@@ -10,6 +11,7 @@ const app = express()
 
 // middlewares
 app.use(express.json())
+app.use(cors())
 app.use(logger)
 
 // Routes
