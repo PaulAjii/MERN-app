@@ -5,6 +5,7 @@ const cors = require('cors')
 // IMPORTS
 const logger = require('./middlewares/logger')
 const workoutRoutes = require('./routes/Workouts')
+const userRoutes = require('./routes/Users')
 const connectDB = require('./db/connect')
 
 const app = express()
@@ -16,6 +17,7 @@ app.use(logger)
 
 // Routes
 app.use('/api/v1/workouts', workoutRoutes)
+app.use('/api/v1/users', userRoutes)
 
 // listening
 const start = async () => {
