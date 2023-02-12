@@ -1,5 +1,5 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap'); */
 
 /* layout */
 :root {
@@ -11,7 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -77,8 +77,11 @@ header a {
   cursor: pointer;
   background: #f1f1f1;
   padding: 6px;
-  border-radius: 50%;
+  border-radius: 10%;
   color: #333;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  text-transform: capitalize;
 }
 
 /* new workout form */
@@ -138,6 +141,7 @@ nav button {
   cursor: pointer;
   font-size: 1em;
   outline: none;
+  margin-left: 10px;
 }
 
 /* auth forms */
