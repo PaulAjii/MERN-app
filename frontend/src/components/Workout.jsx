@@ -10,7 +10,7 @@ const Workout = ({ workout }) => {
     if(!user) return
     
     const { _id: id } = workout
-    const response = await fetch(`http://localhost:5000/api/v1/workouts/${ id }`, {
+    const response = await fetch(`https://exercise-reps.onrender.com/api/v1/workouts/${ id }`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${user.token}`
