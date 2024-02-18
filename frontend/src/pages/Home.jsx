@@ -10,7 +10,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://localhost:5000/api/v1/workouts/', {
+      const response = await fetch('https://exercise-reps.onrender.com/api/v1/workouts/', {
         headers: {
           'Authorization': `Bearer ${user.token}`
         }
