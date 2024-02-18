@@ -29,11 +29,17 @@ const Home = () => {
 
   return (
     <section className='home'>
+    { workouts ?
       <div className="workouts">
         {workouts && workouts.map(workout => (
           <Workout key={workout._id} workout={workout} />
         ))}
       </div>
+        :
+      <div className="empty">
+        There are no workouts here. Add one.
+      </div>
+    }
       <WorkoutForm />
     </section>
   )
