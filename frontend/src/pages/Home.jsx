@@ -29,16 +29,16 @@ const Home = () => {
 
   return (
     <section className='home'>
-    { workouts ?
+    { (!workouts || workouts.length === 0) ?
+      <div className="empty">
+        There are no workouts here. Add one.
+      </div>
+         :
       <div className="workouts">
         {workouts && workouts.map(workout => (
           <Workout key={workout._id} workout={workout} />
         ))}
-      </div>
-        :
-      <div className="empty">
-        There are no workouts here. Add one.
-      </div>
+      </div> 
     }
       <WorkoutForm />
     </section>
